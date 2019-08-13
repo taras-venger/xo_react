@@ -1,33 +1,58 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-image: url(../src/img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+  font-family: 'Indie Flower', 'Arial', cursive;
+  font-weight: 400;
+  font-size: 70px;
+  color: #ffffff;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  font-family: 'Indie Flower', 'Arial', cursive;
+  font-weight: 300;
+  font-size: 30px;
+  color: #327e4b;
+  background-color: #ffffff;
+  width: 250px;
+  margin-top: 20px;
+  padding: 5px 15px;
+  border: 0;
+  text-align: center;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table {
+  height: 454px;
+  width: 454px;
+  border: 2px solid #ffffff;
+  position: relative;
+  margin: 0 auto;
+}
+
+.cell {
+  height: 150px;
+  width: 150px;
+  border: 2px solid #ffffff;
+  float: left;
+  font-family: 'Indie Flower', 'Arial', cursive;
+  font-weight: 400;
+  font-size: 100px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.cell:hover {
+  border: 5px solid #ffffff;
 }
