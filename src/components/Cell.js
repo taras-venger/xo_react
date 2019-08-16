@@ -1,6 +1,6 @@
 import React from 'react';
 
-const cell = props => {
+const Cell = props => {
   return (
     <div className='cell' id={props.id} onClick={props.makeMove}>
       {props.player}
@@ -8,4 +8,4 @@ const cell = props => {
   );
 };
 
-export default cell;
+export default Cell;
