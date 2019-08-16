@@ -66,25 +66,28 @@ class App extends Component {
     });
   };
 
-  renderCell = id => (
-    <Cell
-      key={id}
-      id={id}
-      makeMove={event => this.makeMove(event.target.id)}
-      player={this.state.moves[id]}
-    />
-  );
-
-  renderCells = () =>
-    Array(9)
-      .fill()
-      .map((_, i) => this.renderCell(i));
-
   render() {
+    const renderCell = id => (
+      <Cell
+        key={id}
+        id={id}
+        makeMove={event => this.makeMove(event.target.id)}
+        player={this.state.moves[id]}
+      />
+    );
+
+    const renderCells = () => {
+      let cells = [];
+      for (let i = 0; i < 9; i++) {
+        cells.push(renderCell(i));
+      }
+      return cells;
+    };
+
     return (
       <div className='App'>
         <h1>Tic Tac Toe</h1>
-        <div className='table'>{this.renderCells()}</div>
+        <div className='table'>{renderCells()}</div>
         <button onClick={this.resetGame}>Start new game</button>
       </div>
     );
