@@ -11,6 +11,7 @@ class App extends Component {
   cellAvailability = id => !this.state.moves[id];
 
   checkWin = moves => {
+    let winner;
     const winningOptions = [
       [0, 1, 2],
       [3, 4, 5],
@@ -21,18 +22,16 @@ class App extends Component {
       [0, 4, 8],
       [2, 4, 6]
     ];
-    return winningOptions.some(option => {
-      const [a, b, c] = [...option];
-      const win = moves[a] && moves[a] === moves[b] && moves[a] === moves[c];
-      win && setTimeout(() => alert(`Player ${moves[a]} won`), 0);
-      return win;
+    const win = winningOptions.some(option => {
+      const [a, b, c] = option;
+      const match = moves[a] && moves[a] === moves[b] && moves[a] === moves[c];
+      if (match) winner = moves[a];
+      return match;
     });
+    return win && winner;
   };
 
-  checkDraw = moves => {
-    const draw = moves.every(el => el !== null);
-    draw && setTimeout(() => alert(`Game over`), 0);
-    return draw;
+  checkDraw = moves => moves.every(el => el !== null);
   };
 
   gameOver = moves => this.checkWin(moves) || this.checkDraw(moves);
