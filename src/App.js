@@ -76,7 +76,7 @@ class App extends Component {
     <Cell
       key={id}
       id={id}
-      makeMove={event => this.makeMove(event.target.id)}
+      click={this.handleClick.bind(this)}
       player={this.state.moves[id]}
     />
   );
