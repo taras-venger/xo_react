@@ -37,24 +37,24 @@ class App extends Component {
   gameOver = moves => this.checkWin(moves) || this.checkDraw(moves);
 
   makeMove = id => {
-    if (!this.state.gameOver) {
       //Player's move:
       const moves = this.state.moves.slice();
-      if (this.cellAvailability(id)) {
         moves[id] = 'X';
-        let gameOver = this.gameOver(moves);
         // Machine's move
-        if (!gameOver) {
+    if (!this.gameOver(moves)) {
           const vacantIDs = [];
           moves.forEach((player, id) => !player && vacantIDs.push(id));
-          const id2 = vacantIDs[Math.floor(Math.random() * vacantIDs.length)];
-          moves[id2] = '0';
-          gameOver = this.gameOver(moves);
+      const random = vacantIDs[Math.floor(Math.random() * vacantIDs.length)];
+      moves[random] = '0';
         }
-        this.setState({ moves, gameOver });
-      } else {
-        alert('Selected cell is not available');
-      }
+    this.setState({ moves, gameOver: this.gameOver(moves) });
+  };
+
+  handleClick = event => {
+    const { id } = event.target.dataset;
+    if (!(this.state.gameOver || this.state.moves[id])) this.makeMove(id);
+  };
+
     }
   };
 
