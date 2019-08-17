@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/xo_react/static/css/main.727f587d.chunk.css",
+    "main.css": "/xo_react/static/css/main.52f571ba.chunk.css",
     "main.js": "/xo_react/static/js/main.1c69d09e.chunk.js",
     "main.js.map": "/xo_react/static/js/main.1c69d09e.chunk.js.map",
     "runtime~main.js": "/xo_react/static/js/runtime~main.78d582f6.js",
@@ -8,9 +8,9 @@
     "static/js/2.72cd42a7.chunk.js": "/xo_react/static/js/2.72cd42a7.chunk.js",
     "static/js/2.72cd42a7.chunk.js.map": "/xo_react/static/js/2.72cd42a7.chunk.js.map",
     "index.html": "/xo_react/index.html",
-    "precache-manifest.857d0b742b0bd0b32697a2bfcae951ad.js": "/xo_react/precache-manifest.857d0b742b0bd0b32697a2bfcae951ad.js",
+    "precache-manifest.e0b63839c3eec7dd0fa188ea3a3165f1.js": "/xo_react/precache-manifest.e0b63839c3eec7dd0fa188ea3a3165f1.js",
     "service-worker.js": "/xo_react/service-worker.js",
-    "static/css/main.727f587d.chunk.css.map": "/xo_react/static/css/main.727f587d.chunk.css.map",
-    "static/media/App.css": "/xo_react/static/media/img.050621b9.jpg"
+    "static/css/main.52f571ba.chunk.css.map": "/xo_react/static/css/main.52f571ba.chunk.css.map",
+    "static/media/App.css": "/xo_react/static/media/img.c2c9768d.jpg"
   }
 }
