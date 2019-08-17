@@ -55,6 +55,13 @@ class App extends Component {
     if (!(this.state.gameOver || this.state.moves[id])) this.makeMove(id);
   };
 
+  componentDidUpdate = () => {
+    const winner = this.checkWin(this.state.moves);
+    const draw = this.checkDraw(this.state.moves);
+    if (winner) {
+      setTimeout(() => alert(`Player ${winner} won`), 0);
+    } else if (draw) {
+      setTimeout(() => alert(`Game over`), 0);
     }
   };
 
