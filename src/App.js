@@ -8,8 +8,6 @@ class App extends Component {
     gameOver: false
   };
 
-  cellAvailability = id => !this.state.moves[id];
-
   checkWin = moves => {
     let winner;
     const winningOptions = [
@@ -32,27 +30,25 @@ class App extends Component {
   };
 
   checkDraw = moves => moves.every(el => el !== null);
-  };
-
   gameOver = moves => this.checkWin(moves) || this.checkDraw(moves);
-
-  makeMove = id => {
-      //Player's move:
-      const moves = this.state.moves.slice();
-        moves[id] = 'X';
-        // Machine's move
-    if (!this.gameOver(moves)) {
-          const vacantIDs = [];
-          moves.forEach((player, id) => !player && vacantIDs.push(id));
-      const random = vacantIDs[Math.floor(Math.random() * vacantIDs.length)];
-      moves[random] = '0';
-        }
-    this.setState({ moves, gameOver: this.gameOver(moves) });
-  };
 
   handleClick = event => {
     const { id } = event.target.dataset;
     if (!(this.state.gameOver || this.state.moves[id])) this.makeMove(id);
+  };
+
+  makeMove = id => {
+    //Player's move:
+    const moves = this.state.moves.slice();
+    moves[id] = 'X';
+    // Machine's move
+    if (!this.gameOver(moves)) {
+      const vacantIDs = [];
+      moves.forEach((player, id) => !player && vacantIDs.push(id));
+      const random = vacantIDs[Math.floor(Math.random() * vacantIDs.length)];
+      moves[random] = '0';
+    }
+    this.setState({ moves, gameOver: this.gameOver(moves) });
   };
 
   componentDidUpdate = () => {
